@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📝Boletim Escolar📝</title>
+
+    <!-- Fonte do google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Fjalla One', sans-serif;
+            color:#f216ca;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            margin: 30px auto;
+            display: block;
+            border: none;
+            background-color: #000000;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e78ad6;
+        }
+
+        #saida {
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #e78ad6;
+            border: 1px solid #bc1498;
+            width: 400px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        /*PAINEL FIXO */
+        #painelRegras {
+            text-align: center;
+            bottom: 10px;
+            left: 10px;
+        }
+
+       #tabelaRegras {
+        display: none;
+        margin: 30px auto; /* centraliza horizontal */
+        width: 400px;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        text-align: center; /* centraliza texto */
+}
+
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        /* ANIMAÇÃO */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* CAIXA DAS REGRAS */
+#tabelaRegras {
+    display: none;
+    margin: 30px auto;
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+
+/* CENTRALIZAR TABELA */
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+/* ESTILO */
+th {
+    background-color: #e78ad6;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+    </style>
+</head>
+
+<body>
+
+    <h1>🎒Sistema de Boletim Escolar🎒</h1>
+
+    <p style="text-align: center;">Clique no botão para gerar o boletim:</p>
+
+    <button onclick="gerarBoletim()">Gerar Boletim</button>
+
+    <div id="saida"></div>
+
+    <!-- BOTÃO + TABELA -->
+    <div id="painelRegras">
+        <button onclick="toggleRegras()">📊 Regras</button>
+
+        <div id="tabelaRegras">
+            <h3>Regras de classificação</h3>
+            <table border="1">
+                <tr>
+                    <th>Média</th>
+                    <th>Resultado</th>
+                </tr>
+                <tr>
+                    <td>>= 9</td>
+                    <td>Excelente</td>
+                </tr>
+                <tr>
+                    <td>>= 7</td>
+                    <td>Bom</td>
+                </tr>
+                <tr>
+                    <td>>= 6</td>
+                    <td>Aprovado</td>
+                </tr>
+                <tr>
+                    <td>&lt; 6</td>
+                    <td>Reprovado</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
